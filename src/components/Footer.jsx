@@ -1,0 +1,28 @@
+import React, { useState } from "react";
+import Container from "react-bootstrap/Container";
+import config from "../editable-stuff/config.js";
+import GetInTouch from "./home/GetInTouch";
+const Footer = () => {
+  const { showGetInTouch } = config;
+  const [bgStyle] = useState({ backgroundColor: "#f5f5f5" });
+
+  return (
+    <footer style={bgStyle} className="mt-auto py-5 text-center ">
+      <Container>
+        {showGetInTouch && <GetInTouch />}
+        <i className="fas fa-code"></i> with <i className="fas fa-heart"></i> by{" "}
+        <a
+          className="badge badge-dark"
+          rel="noopener"
+          href="https://github.com/danilonelder"
+          aria-label="My GitHub"
+        >
+          Danilo Nelder
+        </a>{" "}
+        using <i className="fab fa-react" />
+      </Container>
+    </footer>
+  );
+};
+
+export default Footer;
